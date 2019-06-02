@@ -1,0 +1,36 @@
+<view class="container">
+
+    <view class="header">
+        <z-episode
+                index="{{classicData.index}}">
+        </z-episode>
+        <!--// 发送请求获取数据到组件中步骤9.在调用组件时,通过xxx={{classicData.xxx}}的方法将数据传递到组件中-->
+        <z-like bindlike="onLike"
+                like='{{likeStatus}}'
+                count='{{likeCount}}'>
+        </z-like>
+    </view>
+
+    <z-movie wx:if="{{classicData.type===100}}" img="{{classicData.image}}"
+             content="{{classicData.content}}">
+    </z-movie>
+
+    <z-music wx:if="{{classicData.type==200}}"
+             img="{{classicData.image}}"
+             src="{{classicData.url}}"
+             title="{{classicData.title}}"
+             content="{{classicData.content}}">
+    </z-music>
+
+    <z-essay wx:if="{{classicData.type===300}}" img="{{classicData.image}}"
+             content="{{classicData.content}}">
+    </z-essay>
+
+    <z-navi class="navi"
+            title="{{classicData.title}}"
+            first="{{first}}"
+            latest="{{latest}}"
+            bindleft="onNext" bindright="onPrevious">
+    </z-navi>
+
+</view>

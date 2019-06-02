@@ -1,0 +1,6 @@
+<!--components/like/index.wxml-->
+<!--// 发送请求获取数据到组件中步骤12.通过组件页面使用{{}}.将数据同步到页面中-->
+<view class="container" bindtap='onLike'>
+<image src="{{like?likeSrc:dislikeSrc}}"></image>
+<text>{{count}}</text>
+</view>
