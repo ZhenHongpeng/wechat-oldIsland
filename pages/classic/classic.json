@@ -5,7 +5,7 @@
     "z-episode": "/components/episode/index",
     "z-navi": "/components/navi/index",
     "z-essay": "/components/classic/essay/index",
-    "z-music": "/components/classic/music/index"
-
+    "z-music": "/components/classic/music/index",
+    "z-button": "/components/image-button/index"
   }
 }

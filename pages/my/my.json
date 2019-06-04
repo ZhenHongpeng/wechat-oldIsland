@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "z-tag": "/components/tag/index",
+    "z-button": "/components/image-button/index",
+    "z-preview": "/components/preview/index"
+  }
+}

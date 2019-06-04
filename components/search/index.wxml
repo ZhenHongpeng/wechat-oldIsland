@@ -1,0 +1,47 @@
+<!--components/search/index.wxml-->
+<view class="container">
+    <view class="header">
+        <view class="search-container">
+            <image class="icon" src="images/search.png"></image>
+            <input bindconfirm="onConfirm" type="text" placeholder-class="in-bar"
+                   placeholder="书籍或作家名" class="bar" auto-focus="true" value="{{q}}"/>
+            <image bindtap="onDelete" class="cancel-img" src="images/cancel.png"></image>
+        </view>
+        <view class="cancel" bindtap="onCancel">取消</view>
+    </view>
+
+    <view wx:if="{{!searching}}">
+        <view class="history">
+            <view class="title">
+                <view class="chunk"></view>
+                <text>历史搜索</text>
+            </view>
+        </view>
+        <view class="tags">
+            <block wx:for="{{historyWords}}" wx:key="">
+                <z-tag bindtapping="onConfirm" text="{{item}}"></z-tag>
+            </block>
+        </view>
+        <view class="history hot-search">
+            <view class="title">
+                <view class="chunk"></view>
+                <text>热门搜索</text>
+            </view>
+            <view class="tags">
+                <block wx:for="{{hotWords}}" wx:key="">
+                    <z-tag bindtapping="onConfirm" text="{{item}}"></z-tag>
+                </block>
+            </view>
+        </view>
+    </view>
+
+    <view wx:if="{{searching}}" class="books-container">
+        <block wx:for="{{dataArray}}" wx:key="">
+            <z-book class="book" book="{{item}}"></z-book>
+        </block>
+    </view>
+
+    <z-loading class="loading-center" wx:if="{{loadingCenter}}"></z-loading>
+    <z-loading class="loading" wx:if="{{loading}}"></z-loading>
+    <text wx:if="{{noneResult}}" class="empty-tip">没有搜索到数据...换个关键词试试?</text>
+</view>

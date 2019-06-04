@@ -24,7 +24,7 @@ Component({
         year: 0,
         month: '',
         _index: '',
-        months:['壹月','贰月','叁月','肆月','伍月','陆月','柒月','捌月','玖月','拾月','拾壹月','腊月',]
+        months:['壹月','贰月','叁月','肆月','伍月','陆月','柒月','捌月','玖月','拾月','拾壹月','腊月',],
     },
 
     /**
@@ -38,7 +38,7 @@ Component({
 
         this.setData({
             year: year,
-            month: this.data.months[month]
+            month: this.data.months[month],
         })
     }
 })

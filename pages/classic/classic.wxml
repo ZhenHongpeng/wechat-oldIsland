@@ -5,10 +5,15 @@
                 index="{{classicData.index}}">
         </z-episode>
         <!--// 发送请求获取数据到组件中步骤9.在调用组件时,通过xxx={{classicData.xxx}}的方法将数据传递到组件中-->
-        <z-like bindlike="onLike"
-                like='{{likeStatus}}'
-                count='{{likeCount}}'>
-        </z-like>
+        <view class="like-container">
+            <z-like bindlike="onLike"
+                    like='{{likeStatus}}'
+                    count='{{likeCount}}'>
+            </z-like>
+            <z-button class="share-btn" open-type="share">
+                <image class="share" slot="img" src="/images/icon/share.png"></image>
+            </z-button>
+        </view>
     </view>
 
     <z-movie wx:if="{{classicData.type===100}}" img="{{classicData.image}}"

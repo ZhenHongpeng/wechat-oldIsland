@@ -5,7 +5,13 @@
     "components/episode/index",
     "components/classic/movie/index",
     "components/classic/music/index",
-    "components/classic/essay/index"
+    "components/classic/essay/index",
+    "pages/book/book",
+    "pages/my/my",
+    "pages/book-detail/book-detail",
+    "pages/about/about",
+    "pages/course/course",
+    "pages/classic-detail/classic-detail"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
@@ -17,5 +23,27 @@
   "sitemapLocation": "sitemap.json",
   "requiredBackgroundModes": [
     "audio"
-  ]
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/classic/classic",
+        "text": "流行",
+        "icon": "/images/tab/classic.png",
+        "selectedIconPath": "/images/tab/classic@highlight.png"
+      },
+      {
+        "pagePath": "pages/book/book",
+        "text": "书籍",
+        "icon": "/images/tab/book.png",
+        "selectedIconPath": "/images/tab/book@highlight.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "icon": "/images/tab/my.png",
+        "selectedIconPath": "/images/tab/my@highlight.png"
+      }
+    ]
+  }
 }

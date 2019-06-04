@@ -7,7 +7,8 @@ Component({
     like: { type: Boolean, value: false },
     // 为什么页面中可以直接显示count呢?
     // 因为在主页面的onload生命周期函数中,就调用了getlastest方法,将count同步到组件中了
-    count: { type: Number}
+    count: { type: Number},
+    readOnly:Boolean
   },
   /**
    * 页面的初始数据
@@ -18,6 +19,9 @@ Component({
   },
   methods:{
     onLike: function (event) {
+      if (this.properties.readOnly) {
+          return
+      }
       // 发送请求获取数据到组件中步骤11. 触发点击事件时,改变数据
       let like = this.properties.like
       let count = this.properties.count

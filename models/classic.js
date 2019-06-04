@@ -51,6 +51,14 @@ class ClassicModel extends HTTP {
         return latestIndex == index ? true : false
     }
 
+    getMyfavor(success){
+        const params = {
+            url: 'classic/favor',
+            success:success
+        }
+        this.request(params)
+    }
+
     // 将当前期号保存到微信缓存中,便于对比当前是否为最新一期
     _setLatestIndex(index) {
         wx.setStorageSync('latest', index)
